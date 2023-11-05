@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match 3 Game</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+       /* Style for the game board container */
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 2px; /* subtle gaps between blobs */
+  width: 500px;
+  height: 500px;
+  margin: auto; /* to center the board */
+  border: 5px solid rgb(150, 150, 150); /* border for the board */
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* Style for each blob */
+.blob {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px; /* rounded corners for blobs */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* subtle inner shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; /* smooth transition for color change */
+}
+
+/* Additional styles for the game interface */
+body {
+  background-color: #f8f8f8; /* lighter background for contrast */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Add some hover effect for interactivity */
+.blob:hover {
+  opacity: 0.7; /* Slight transparency on hover */
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+#score-container {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px; /* Add some space between the score and the game board */
+}
+    </style>
+</head>
+<body>
+    <div id="score-container">
+        <label for="score">Score:</label>
+        <span id="score">0</span>
+      </div>
+<div id="gameBoard"></div>
+<script src="game.js"></script>
+</body>
+</html>
